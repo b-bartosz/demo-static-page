@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles/index.css" type="text/css">
+        <title>Notify</title>        
+    </head>
+    <body>
+        <section id="kv">
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <div class="wrap">
+                <div class="content-wrap">
+                    <div class="content-inner">
+                        <div class="content-area">
+                            <img src="./images/notify.png" alt="notify"/>
+                            <p>A great new free psd theme to showcase your new application.</p>
+                            <div class="controls">
+                                <img class="slide-btn1-active" data-slide-number="1" src="./images/logo1_active.png" alt="Apple logo"/>
+                                <img class="slide-btn2" data-slide-number="2" src="./images/logo2.png" alt="Android logo"/>
+                                <img class="slide-btn3" data-slide-number="3" src="./images/logo3.png" alt="Windows logo"/>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+                <figure>
+                    <img id="slide1" class="slide1" src="./images/header1.jpg" alt="KV"/>
+                    <img id="slide2" class="slide1" src="./images/header2.jpg" alt="KV"/>
+                    <img id="slide3" class="slide1" src="./images/header3.jpg" alt="KV"/>
+                </figure>
+            </div>
+        </section>
+        <section id="features">
+            <div class="wrap">
+            <div class="columns">
+                <div class="column three-columns">
+                    <img src="./images/features1.png" alt="icon"/>
+                    <h1>Editable Theme</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id quam aliquet, sollicitudin purus in, posuere diam.</p>
+                </div>
+                <div class="column three-columns">
+                    <img src="./images/features2.png" alt="icon"/>
+                    <h1>Flat Design</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id quam aliquet, sollicitudin purus in, posuere diam.</p>
+                </div>
+                <div class="column three-columns">
+                    <img src="./images/features3.png" alt="icon"/>
+                    <h1>Reach Your Audience</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id quam aliquet, sollicitudin purus in, posuere diam.</p>
+                </div>
+            </div>
+        </div>
+        </section>
+        <section id="updates">
+            <div class="wrap">
+            <div class="columns">
+                <div class="column two-columns">
+                    <h1>Get Notified Of Any Updates!</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id quam aliquet, sollicitudin purus in, posuere diam. Quisque vitae mauris in elit finibus convallis. Suspendisse tortor erat, interdum non nunc et, varius ullamcorper sapien. Donec eu condimentum elit. Integer hendrerit diam tristique, rhoncus lacus cursus, eleifend mi.</p>
+                    <form action="">
+                        <input type="email" id="email" name="email" placeholder="Email Address">
+                        <input type="submit" id="submit-btn" value="Notify">
+                    </form>
+                </div>
+                <div id="videoPlayer" class="column two-columns">                    
+                    <figure id="videoContainer">
+                        <iframe src="https://player.vimeo.com/video/396896057" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        <div id="overlay"></div>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+        </section>
+        <section id="people">
+            <div class="wrap">
+            <div class="content">
+                <div class="quote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in nulla massa. Nullam lobortis feugiat suscipit. Nulla ex urna, scelerisque eu turpis sit amet, vulputate pretium sem. Donec sagittis, mi eget tincidunt accumsan, tortor magna eleifend ligula, vel elementum erat sem ac dui.</p>
+                    <strong>Jane Hunt</strong>
+                </div>
+                <div id="faces"></div>
+                    <h1>Say Hi & Get in Touch</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>                    
+                <div class="icons">
+                    <a href="https://www.twitter.com" target="_blank"><img src="./images/twitter.png" data-icon-name="twitter" alt="twitter icon"/></a>
+                    <a href="https://www.facebook.com" target="_blank"><img src="./images/facebook.png" data-icon-name="facebook" alt="facebook icon"/></a>
+                    <a href="https://www.pinterest.com" target="_blank"><img src="./images/pinterest.png" data-icon-name="pinterest" alt="pinterest icon"/></a>
+                    <a href="https://www.google.com" target="_blank"><img src="./images/google.png" data-icon-name="google" alt="google icon"/></a>
+                    <a href="https://www.linkedin.com" target="_blank"><img src="./images/linkedin.png" data-icon-name="linkedin" alt="linkedin icon"/></a>
+                    <a href="https://www.youtube.com" target="_blank"><img src="./images/youtube.png" data-icon-name="youtube" alt="youtube icon"/></a>
+                </div>
+            </div>
+        </div>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Download</a></li>
+                <li><a href="#">Press</a></li>
+                <li><a href="mailto:someone@example.com" target="_top">Email</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </footer>
+
+
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <script>
+
+            // --------------------- carousel ------------------------- //
+            var currentSlide = 1;
+
+            function animateBar() {
+                document.getElementById('myBar').classList.remove('animateBar');
+                void document.getElementById('myBar').offsetWidth;
+                document.getElementById('myBar').classList.add('animateBar');
+            }
+
+            function moveSlides() {
+                var test = Array.prototype.slice.call(document.querySelectorAll('#kv figure img'));
+                test.forEach(function(item) {
+                    switch (currentSlide) {
+                        case 1:
+                            item.className = "slide1";
+                            break;
+                        case 2:
+                            item.className = "slide2";
+                            break;
+                        case 3:
+                            item.className = "slide3";
+                            break;
+                    }
+                });
+            }
+
+            function autoSwitchSlide() {   
+                animateBar();    
+
+                currentSlide++;
+                if (currentSlide === 4) currentSlide = 1;
+                var test4 = document.querySelectorAll('.controls img');
+                console.log("test4: ", test4);
+                var buttons = Array.prototype.slice.call(test4);       
+                console.log("Buttons: ", buttons);         
+                buttons.forEach(function(item) { 
+                    item.src = "./images/logo" + item.dataset.slideNumber + ".png"; 
+                });    
+                buttons[currentSlide-1].src = "./images/logo" + buttons[currentSlide-1].dataset.slideNumber + "_active.png";
+
+                moveSlides();
+            }
+
+            var slideTimer = setInterval(autoSwitchSlide, 4000);
+            animateBar();
+
+            function switchSlide() {     
+                animateBar();
+
+                var test2 = Array.prototype.slice.call(document.querySelectorAll('.controls img'));
+                test2.forEach(function(item) {
+                    item.src = "./images/logo" + item.dataset.slideNumber + ".png";
+                });    
+                this.src = "./images/logo" + this.dataset.slideNumber + "_active.png";
+
+                currentSlide = parseInt(this.dataset.slideNumber);
+                clearInterval(slideTimer);
+                slideTimer = setInterval(autoSwitchSlide, 4000);
+
+                moveSlides();
+            }
+                var test3 = Array.prototype.slice.call(document.querySelectorAll('.controls img'));
+                test3.forEach(function(item) {
+                item.addEventListener('click', switchSlide);
+            });
+            // --------------------- carousel ------------------------- //
+
+            // --------------------- iframe video --------------------- //
+            var iframe = document.querySelector('iframe');
+            var player = new Vimeo.Player(iframe);
+
+            player.on('play', function() {
+                console.log('Played the video');
+            });
+            function playVideo() {
+                document.getElementById("overlay").classList.add("hide");
+                player.play();
+            }
+            document.getElementById("overlay").addEventListener("click", playVideo);
+            // --------------------- iframe video --------------------- //
+
+            // --------------------- color icons ---------------------- //
+            function colorUp() {this.src = "./images/" + this.dataset.iconName + "_hover.png";}
+            function colorDown() {this.src = "./images/" + this.dataset.iconName + ".png";}
+
+            var test5 = Array.prototype.slice.call(document.querySelectorAll('.icons img'));
+            test5.forEach(function(item) {
+                item.addEventListener('mouseover', colorUp);
+                item.addEventListener('mouseout', colorDown);
+            });
+            // --------------------- color icons ---------------------- //
+
+            // --------------------- face icons ----------------------- //
+            var output = [];
+            for (var i = 1; i <= 21; i++) {output.push('<li><figure class="faceIcon"><img src="./images/', i, '.jpg"/> <div class="faceOverlay"></div></figure></li>');}
+            document.getElementById('faces').innerHTML += '<ul>' + output.join('') + '</ul>';
+            // --------------------- face icons ----------------------- //
+
+        </script>
+    </body>
+</html>
